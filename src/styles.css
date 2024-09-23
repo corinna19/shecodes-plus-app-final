@@ -21,8 +21,8 @@ body {
   padding: 0;
   text-align: center;
   font-family: "Itim", cursive;
+  margin-bottom: px;
 }
-
 h1 {
   font-size: 50px;
   color: rgb(74, 74, 79);
@@ -64,7 +64,7 @@ li {
 }
 
 .currentInfo {
-  max-height: 26px;
+  margin-bottom: 30px;
 }
 
 .weather {
