@@ -30,10 +30,6 @@ h1 {
   font-family: "Caveat", cursive;
 }
 
-.header-icon {
-  height: 10px;
-  width: 10px;
-}
 
 .weather-icon {
   height: 50px;
@@ -92,8 +88,8 @@ p {
 }
 
 .weather-forecast-icon{
-text-align: center;
-font-size: 30px;
+display: block;
+margin: 0 auto;
 }
 
 
@@ -102,6 +98,7 @@ text-align: center;
 color:#557FA8;
 font-size: 16px;
 }
+
 
 .search-form {
   font-family: "Itim", cursive;
@@ -114,11 +111,11 @@ font-size: 16px;
   border-radius: 5px;
   padding: 0;
 }
-.header-icon:hover {
+.weather-icon:hover {
   transform: scale(1.2);
 }
 
-.weather-icon:hover {
+.weather-forecast-icon:hover {
   transform: scale(1.2);
 }
 
