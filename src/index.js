@@ -17,9 +17,7 @@ function refreshWeather(response) {
     let windElement = document.querySelector("#wind-speed");
     windElement.innerHTML = `${response.data.wind.speed} km/h`;
 
-    let maxTemperature = document.querySelector("#max-temperature");
 
-    let minTemperature = document.querySelector("#max-temperature");
   
     let feelElement = document.querySelector(".feels-like");
     let feelTemp = response.data.temperature.feels_like;
