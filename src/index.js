@@ -16,6 +16,10 @@ function refreshWeather(response) {
   
     let windElement = document.querySelector("#wind-speed");
     windElement.innerHTML = `${response.data.wind.speed} km/h`;
+
+    let maxTemperature = document.querySelector("#max-temperature");
+
+    let minTemperature = document.querySelector("#max-temperature");
   
     let feelElement = document.querySelector(".feels-like");
     let feelTemp = response.data.temperature.feels_like;
@@ -25,8 +29,8 @@ function refreshWeather(response) {
     let date = new Date(response.data.time * 1000);
     timeElement.innerHTML = formatDate(date);
   
-    let iconElement = document.querySelector("#header-icon");
-    iconElement.innerHTML = `<img src="${response.data.condition.icon_url}" class="weather-app-icon" />`;
+    let iconElement = document.querySelector(".weather-icon");
+    iconElement.innerHTML = `<img src="${response.data.condition.icon_url}"/>`;
   
     getForecast(response.data.city);
 
@@ -105,7 +109,7 @@ function refreshWeather(response) {
     let forecastHtml = "";
 
     response.data.daily.forEach(function (day, index) {
-    if (index < 5) {
+    if (index > 0 && index < 6) {
     forecastHtml = forecastHtml + 
     `
     <div class="weather-forecast-day">
@@ -124,9 +128,28 @@ function refreshWeather(response) {
 
 let forecastElement = document.querySelector("#forecast");
 forecastElement.innerHTML = forecastHtml;
+        };
 
+function displayminmaxTemp(response) {
+    console.log(response.data);
+
+    let minmaxHtml = "";
+
+    response.data.daily.forEach(function (day, index) {
+        if (index > 5) {
+            minmaxHtml = minmaxHtml + 
+            `
+            <li>H: <strong>${Math.round(day.temperature.maximum)}°C</strong></li>
+            <li>L: <strong>${Math.round(day.temperature.minimum)}°C</strong></li>
+            `;
+        }
+    });
+
+let minmaxElement = document.querySelector("#minmax-temp");
+minmaxElement.innerHTML = minmaxHtml;
 };
+
+    
   searchCity("London"); 
   displayForecast();
-
- 
+  displayminmaxTemp();
