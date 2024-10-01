@@ -16,8 +16,6 @@ function refreshWeather(response) {
   
     let windElement = document.querySelector("#wind-speed");
     windElement.innerHTML = `${response.data.wind.speed} km/h`;
-
-
   
     let feelElement = document.querySelector(".feels-like");
     let feelTemp = response.data.temperature.feels_like;
