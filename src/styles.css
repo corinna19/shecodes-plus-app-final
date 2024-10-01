@@ -128,10 +128,7 @@ footer {
 
 a {
   color: #2b2a2a;
-  font-size: 14px;
-  text-decoration: none;
-}
-
-.links {
-  font-family: "Itim", cursive;
+  font-size: 16px;
+  font-weight: 900;
+  text-decoration: underline;
 }
