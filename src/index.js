@@ -121,31 +121,11 @@ function refreshWeather(response) {
             });
 
 
-
 let forecastElement = document.querySelector("#forecast");
 forecastElement.innerHTML = forecastHtml;
         };
 
-function displayminmaxTemp(response) {
-    console.log(response.data);
-
-    let minmaxHtml = "";
-
-    response.data.daily.forEach(function (day, index) {
-        if (index > 5) {
-            minmaxHtml = minmaxHtml + 
-            `
-            <li>H: <strong>${Math.round(day.temperature.maximum)}°C</strong></li>
-            <li>L: <strong>${Math.round(day.temperature.minimum)}°C</strong></li>
-            `;
-        }
-    });
-
-let minmaxElement = document.querySelector("#minmax-temp");
-minmaxElement.innerHTML = minmaxHtml;
-};
-
     
   searchCity("London"); 
   displayForecast();
-  displayminmaxTemp();
+  
