@@ -111,11 +111,16 @@ font-size: 16px;
   border-radius: 5px;
   padding: 0;
 }
-.weather-icon:hover {
+
+.search-button:hover {
+  background-color: rgba(135, 207, 235, 0.404)
+}
+
+.weather-icon img:hover {
   transform: scale(1.2);
 }
 
-.weather-forecast-icon:hover {
+.weather-forecast-icon img:hover {
   transform: scale(1.2);
 }
 
